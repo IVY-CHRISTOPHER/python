@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <!-- This div is for the login(left) side of the page -->
+            <h1>Login</h1>
+            <!-- declare a variable called messages -->
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+            <!-- check if there are any messages -->
+            {% if messages %}
+            <!-- loop through the messages -->
+            {% for message in messages %}
+            <!-- display each message in a paragraph tag -->
+            <p style="color: red;">{{message}}</p>
+            {%endfor%}
+            {%endif%}
+            {%endwith%}
+            <div>
+                <!-- this div is for the form with button -->
+                <form action="/login" method="POST" class="form">
+                    <div class="form-group">
+                        <label for="email"><strong>Email:</strong></label>
+                        <input class="form-control" type="text" name="email" placeholder="Yahoo@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><strong>Password:</strong></label>
+                        <input class="form-control" type="password" name="password" placeholder="...">
+                    </div>
+                    <button value="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <!-- this div is for the registration (right) side of the page -->
+            <!-- declare a variable called messages -->
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+            <!-- check if there are any messages -->
+            {% if messages %}
+            <!-- loop through the messages -->
+            {% for message in messages %}
+            <!-- display each message in a paragraph tag -->
+            <p style="color: red;">{{message}}</p>
+            {%endfor%}
+            {%endif%}
+            {%endwith%}
+            <div>
+                <!-- this div is for the registration form with button -->
+                <form action="/create/user" method="POST" class="form">
+                    <div class="form-group">
+                        <label for="fname"><strong>First Name:</strong></label>
+                        <input class="form-control" type="text" name="fname" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname"><strong>Last Name:</strong></label>
+                        <input class="form-control" type="text" name="lname" placeholder="Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><strong>Email:</strong></label>
+                        <input class="form-control" type="text" name="email" placeholder="Yahoo@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><strong>Password:</strong></label>
+                        <input class="form-control" type="password" name="password" placeholder="...">
+                    </div>
+                    <div>
+                        <label for="cpassword"><strong>Confirm Password:</strong></label>
+                        <input type="password" name="cpassword" placeholder="...">
+                    </div>
+                    <button value="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

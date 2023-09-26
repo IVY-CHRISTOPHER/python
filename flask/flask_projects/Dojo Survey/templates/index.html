@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Dojo Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron d-flex justify-content-center bg-dark pt-3">
+            <h1 class="text-white">DOJO SURVEY</h1>
+        </div>
+        <div>
+            <form action="/post" method="post" class="form-vertical bg-dark p-4">
+                <div class="form-group">
+                    <label class="text-white" for="name">Name</label>
+                    <input class="form-control" type="text" name="name" placeholder="Username" required>
+                    <label class="text-white" for="email">Email</label>
+                    <input class="form-control" type="text" name="email" placeholder="Email" required>
+                    <label class="text-white" for="password">Password</label>
+                    <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    <label class="text-white" for="Confirm Password">Confirm Password</label>
+                    <input class="form-control" type="password" name="Confirm Password"
+                        placeholder="Confirm Password WIP" required>
+                </div>
+                <div class="form-group mt-4">
+                    <p class="text-white">Location</p>
+                    <input type="radio" name="location" value="West Coast" required>
+                    <label class="text-white" for="West Coast">West Coast</label> <br>
+                    <input type="radio" name="location" value="East Coast">
+                    <label class="text-white" for="East Coast">East Coast</label> <br>
+                    <input type="radio" name="location" value="Central">
+                    <label class="text-white" for="Central">Central</label>
+                </div>
+                <div class="form-group mt-4">
+                    <p class="text-white">Favorite Language</p>
+                    <input type="checkbox" name="fav_Language" value="Python" required>
+                    <label class="text-white" class="control-label" for="Python">Python</label> <br>
+                    <input type="checkbox" name="fav_Language" value="HTML">
+                    <label class="text-white" class="control-label" for="HTML">HTML</label> <br>
+                    <input type="checkbox" name="fav_Language" value="C#">
+                    <label class="text-white" class="control-label" for="C#">C#</label> <br>
+                </div>
+                <div class="form-group mt-2">
+                    <label class="text-white" for="comments">Comments</label>
+                    <input class="form-control" 1 type="textarea" name="comments">
+                </div>
+                <div class="pt-2">
+                    <button class="btn btn-info" value="create user">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

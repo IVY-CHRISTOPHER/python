@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- div for the nav bar -->
+        <h1>Coding Dojo Wall</h1>
+        <p>Welcome, {{user_id}}</p>
+        <a href="/clear">Log Out</a>
+    </div>
+    <div>
+        <!-- div for the post section -->
+        <p>Whats on your mind? Create a new post.</p>
+        {% with messages = get_flashed_messages(category_filter=['message']) %}
+        {% if messages %}
+        {% for message in messages %}
+        <p style="color: red;">{{message}}</p>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+        <form action="/create/post" method="POST">
+        <textarea name="content" cols="30" rows="10"></textarea>
+        <input type="hidden" name="user_id" value="{{id}}">
+        <button value="submit">Publish</button>
+        </form>
+    </div>
+    <div>
+        <!-- div to show all posts -->
+        <h1>All Community Posts</h1>
+        {%for message in all_messages%}
+        <p>{{message}}</p>
+        {%endfor%}
+    </div>
+</body>
+</html>

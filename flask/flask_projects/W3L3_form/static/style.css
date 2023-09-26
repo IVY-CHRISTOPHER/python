@@ -1,0 +1,18 @@
+.form-group {
+    padding-left: 500px;
+    padding-right: 500px;
+    padding-top: 50px;
+    
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}

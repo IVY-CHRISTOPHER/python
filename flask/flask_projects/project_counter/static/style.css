@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    padding: 5px;
+}
+
+h1 {
+    margin: 10px;
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+p{
+    margin: 25px;
+    font-size: 35px;
+}
+
+button {
+    font-size: 25px;
+    padding: 3px;
+}
+
+.click {
+    background-color: rgb(78, 255, 47);
+}
+
+.clear {
+    background-color: rgb(132, 0, 255);
+    color: white;
+}
+
+.delete {
+    background-color: red;
+}
+
+.custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.submit {
+    margin-top: 5px;
+}

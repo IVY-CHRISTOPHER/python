@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body class="bg-secondary m-0 p-0">
+    <div>
+        <div>
+            <!-- This div is for the login (top) side of the page -->
+            <h1 class="d-flex justify-content-center bg-dark text-light" style="height: 55px;">Login</h1>
+            <!-- declare a variable called messages -->
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+            <!-- check if there are any messages -->
+            {% if messages %}
+            <!-- loop through the messages -->
+            {% for message in messages %}
+            <!-- display each message in a paragraph tag -->
+            <p style="color: red;">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="container d-flex justify-content-center" style="width: 250px;">
+                <form action="/login" method="POST" class="form">
+                    <div class="form-group">
+                        <label for="email"><strong>Email:</strong></label>
+                        <input class="form-control" name="email" type="text" placeholder="Yahoo@google.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><strong>Password:</strong></label>
+                        <input class="form-control" name="password" type="password" placeholder="...">
+                    </div>
+                    <button class="container mt-2 d-flex justify-content-center" value="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <p class="d-flex justify-content-center m-3 text-light">or</p>
+        <div>
+            <!-- This div is for the register (bottom) side of the page -->
+            <h1 class="d-flex justify-content-center bg-dark text-light" style="height: 55px;">Register</h1>
+            <!-- declare a variable called messages -->
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+            <!-- check if there are any messages -->
+            {% if messages %}
+            <!-- loop through the messages -->
+            {% for message in messages %}
+            <!-- display each message in a paragraph tag -->
+            <p style="color: red;">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="container d-flex justify-content-center" style="width: 250px;">
+                <form action="/create/user" method="POST">
+                    <div class="form-group">
+                        <label for="fname"><strong>First Name:</strong></label>
+                        <input class="form-control" type="text" name="fname" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname"><strong>Last Name:</strong></label>
+                        <input class="form-control" type="text" name="lname" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><strong>Email:</strong></label>
+                        <input class="form-control" type="text" name="email" placeholder="google@yahoo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><strong>Password:</strong></label>
+                        <input class="form-control" type="password" name="password" placeholder="...">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpassword"><strong>Confirm Password:</strong></label>
+                        <input class="form-control" type="password" name="cpassword" placeholder="...">
+                    </div>
+                    <button class="container mt-2 d-flex justify-content-center" value="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
